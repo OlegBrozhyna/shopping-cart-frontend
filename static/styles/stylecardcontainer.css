@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3);
+
+}
+
+.card {
+    margin: 1.5em;
+    border: 1px solid #ccc; /* Додати рамку для картки */
+    border-radius: 8px; /* Закруглені кути */
+    overflow: hidden; /* Приховати вихід за межі */
+    width: 300px; /* Ширина картки */
+    margin: 20px; /* Відступи */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+.card>a>img {
+    width: 100%; /* Зробити зображення адаптивним */
+    height: auto; /* Автоматична висота */
+}
+
+.card>.info {
+    text-align: center;
+    padding: 15px; /* Внутрішні відступи */
+}
+
+    .info a:last-of-type p {
+        color: #060606; /* Колір тексту для ціни */
+    }
+    .info p:last-of-type {
+        color: #000000; /* Колір тексту для ціни */
+    }
+
+button {
+    background-color: #b2b2b2; /* Колір фону кнопки */
+    color: white; /* Колір тексту на кнопці */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закруглені кути */
+    padding: 10px 15px; /* Внутрішні відступи */
+    cursor: pointer; /* Показати курсор при наведенні */
+    font-size: 16px; /* Розмір шрифту кнопки */
+    transition: background-color 0.3s; /* Плавний перехід кольору фону */
+}
+
+button:hover {
+    background-color: #bcbcbc; /* Темніший колір при наведенні */
+}
+
+
+
+@media (max-width: 800px) {
+    .container {
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(9);
+    }
+
+    .card {
+        margin-inline: 0;
+    }
+}
